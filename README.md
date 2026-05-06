@@ -36,20 +36,18 @@ A comprehensive, intelligent chatbot designed to help Indian citizens understand
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/kulwinderkour/election-guide-bot.git
-   cd election-guide-bot
+   git clone https://github.com/Kananmehra08/election-bot.git
+   cd election-guide-bot-main
    ```
 
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   bun install
    ```
 
 3. **Set up environment variables**
    ```bash
-   cp env.example .env
+   copy env.example .env
    ```
    
    Update `.env` with your API keys:
@@ -64,8 +62,6 @@ A comprehensive, intelligent chatbot designed to help Indian citizens understand
 4. **Start development server**
    ```bash
    npm run dev
-   # or
-   bun run dev
    ```
 
 ## 🧪 Testing
