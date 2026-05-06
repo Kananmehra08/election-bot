@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { Send, Loader2, Sparkles, Bot, User as UserIcon } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { detectIntent, logIntentDetection } from "@/lib/intent-detection";
 
 export const Route = createFileRoute("/chat")({
   component: ChatPage,
@@ -43,6 +44,11 @@ function ChatPage() {
     const trimmed = text.trim();
     if (!trimmed || loading) return;
     setError(null);
+    
+    // [NLP FEATURE] Detect and log user intent
+    const detectedIntent = detectIntent(trimmed);
+    logIntentDetection(trimmed, detectedIntent);
+    
     const next: Msg[] = [...messages, { role: "user", content: trimmed }];
     setMessages(next);
     setInput("");
